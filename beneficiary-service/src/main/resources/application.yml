@@ -20,3 +20,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+# --- Configuration Springdoc OpenAPI Pour problème SWAGGER UI---
+springdoc:
+  packages-to-scan: com.example.beneficiary-service.web.BeneficiaryRestController
+  show-actuator: false
+  show-spring-data-rest: false

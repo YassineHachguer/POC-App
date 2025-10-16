@@ -24,3 +24,9 @@ eureka:
 beneficiary:
   service:
     url: http://localhost:8081
+
+# --- Configuration Springdoc OpenAPI Pour problème SWAGGER UI---
+springdoc:
+  packages-to-scan: com.example.virementservice.web.VirementRestController
+  show-actuator: false
+  show-spring-data-rest: false
