@@ -19,8 +19,8 @@ public class BeneficiaryServiceApplication {
 	@Bean
 	CommandLineRunner start(BeneficiaryRepository repository) {
 		return args -> {
-			repository.save(new Beneficiary(null, "Dupont", "Jean", "FR761234598765", Beneficiary.Type.PHYSIQUE));
-			repository.save(new Beneficiary(null, "Acme Corp", "S.A.", "FR001122334455", Beneficiary.Type.MORALE));
+			repository.save(new Beneficiary(null, "Yassine", "Yassine", "FR761234598765", Beneficiary.Type.PHYSIQUE));
+			repository.save(new Beneficiary(null, "ALi", "Ali", "FR001122334455", Beneficiary.Type.MORALE));
 			repository.findAll().forEach(System.out::println);
 		};
 	}
