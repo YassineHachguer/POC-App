@@ -1,0 +1,30 @@
+<div class="mb-3">
+  <h3>Créer un bénéficiaire</h3>
+
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+  <form (ngSubmit)="save()" #f="ngForm">
+    <div class="mb-3">
+      <label class="form-label">Nom</label>
+      <input class="form-control" [(ngModel)]="model.nom" name="nom" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Prénom</label>
+      <input class="form-control" [(ngModel)]="model.prenom" name="prenom" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">RIB</label>
+      <input class="form-control" [(ngModel)]="model.rib" name="rib" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Type</label>
+      <select class="form-select" [(ngModel)]="model.type" name="type" required>
+        <option [value]="'PHYSIQUE'">PHYSIQUE</option>
+        <option [value]="'MORALE'">MORALE</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="saving">Créer</button>
+    <button class="btn btn-secondary ms-2" type="button" (click)="cancel()" [disabled]="saving">Annuler</button>
+  </form>
+</div>

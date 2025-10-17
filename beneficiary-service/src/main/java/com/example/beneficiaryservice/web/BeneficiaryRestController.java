@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/beneficiaries")
+@CrossOrigin("*")
 public class BeneficiaryRestController {
     private final BeneficiaryRepository repository;
 

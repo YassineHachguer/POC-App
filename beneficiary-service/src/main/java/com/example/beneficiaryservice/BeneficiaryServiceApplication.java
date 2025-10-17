@@ -21,6 +21,7 @@ public class BeneficiaryServiceApplication {
 		return args -> {
 			repository.save(new Beneficiary(null, "Yassine", "Yassine", "FR761234598765", Beneficiary.Type.PHYSIQUE));
 			repository.save(new Beneficiary(null, "ALi", "Ali", "FR001122334455", Beneficiary.Type.MORALE));
+			repository.save(new Beneficiary(null, "Saad", "Saad", "FR0011223347838", Beneficiary.Type.MORALE));
 			repository.findAll().forEach(System.out::println);
 		};
 	}

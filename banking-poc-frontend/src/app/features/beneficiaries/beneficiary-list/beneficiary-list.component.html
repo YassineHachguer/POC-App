@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3>Bénéficiaires</h3>
+  <div>
+    <button class="btn btn-primary me-2" (click)="create()">Nouveau</button>
+    <button class="btn btn-outline-secondary" (click)="load()">Rafraîchir</button>
+  </div>
+</div>
+
+<div *ngIf="loading" class="alert alert-info">Chargement...</div>
+<div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+<table class="table table-striped" *ngIf="!loading && beneficiaries.length > 0">
+  <thead>
+  <tr><th>ID</th><th>Nom</th><th>Prénom</th><th>RIB</th><th>Type</th></tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let b of beneficiaries">
+    <td>{{ b.id }}</td>
+    <td>{{ b.nom }}</td>
+    <td>{{ b.prenom }}</td>
+    <td>{{ b.rib }}</td>
+    <td>{{ b.type }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!loading && beneficiaries.length === 0" class="alert alert-warning">
+  Aucun bénéficiaire trouvé.
+</div>

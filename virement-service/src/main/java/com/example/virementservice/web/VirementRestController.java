@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/virements")
+@CrossOrigin("*")
 public class VirementRestController {
 
     private final VirementRepository repository;
